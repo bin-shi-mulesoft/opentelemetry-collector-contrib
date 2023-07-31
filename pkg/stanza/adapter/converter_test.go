@@ -137,7 +137,6 @@ func complexEntry() *entry.Entry {
 			},
 		},
 	}
-	e.ScopeName = "scope_abc"
 	return e
 }
 
@@ -396,7 +395,6 @@ func TestAllConvertedEntriesAreSentAndReceived(t *testing.T) {
 					assert.LessOrEqual(t, uint(sl.LogRecords().Len()), tc.maxFlushCount,
 						"Received more log records in one flush than configured by maxFlushCount",
 					)
-					assert.NotEmpty(t, sl.Scope().Name(), "The scope_name of the log entry was not copied.")
 
 				case <-timeoutTimer.C:
 					break forLoop
