@@ -84,6 +84,7 @@ func complexEntriesForNDifferentHosts(count int, n int) []*entry.Entry {
 				},
 			},
 		}
+		e.ScopeName = "scope_abc"
 		ret[i] = e
 	}
 	return ret
